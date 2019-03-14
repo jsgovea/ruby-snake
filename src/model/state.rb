@@ -1,3 +1,4 @@
+# coding: utf-8
 # Representacion del estado del juego
 
 # Un símbolo es el objeto más básico que puedes crear en Ruby:
@@ -27,7 +28,7 @@
   class Grid <Struct.new(:rows, :cols)
   end
 
-  class State <Struct.new(:snake, :food, :grid, :next_direction)
+  class State <Struct.new(:snake, :food, :grid, :next_direction, :game_finished)
   end
 
   def self.initial_state
@@ -38,7 +39,8 @@
           ]),
         Model::Food.new(4,4),
         Model::Grid.new(8, 12),
-        Direction:: DOWN
+        Direction:: DOWN,
+        false
      )
   end
 
